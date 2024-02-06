@@ -16,7 +16,7 @@ export const useTheme = () => {
 }
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const defaultTheme = localStorage.getItem(keyString) || 'light'
+    const defaultTheme = localStorage.getItem(keyString) || 'nord'
     const [theme, _setTheme] = useState(defaultTheme)
     document.documentElement.setAttribute(keyString, defaultTheme);
 
