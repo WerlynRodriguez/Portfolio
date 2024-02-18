@@ -1,26 +1,49 @@
-import { createContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
 
 const keyString = 'data-theme'
+const defTheme = 'light'
+const allThemes = ['light', 'dark']
 
-type TThemeContext = {
+interface IThemeContext {
+    allThemes: string[]
     theme: string
+
+    /**
+     * Set the theme to the entire application
+     * @param theme The theme to set
+     * @example
+     * setTheme('dark')
+     * setTheme('jfnge8w9843hjg') // Error
+     */
     setTheme: (theme: string) => void
 }
 
-export const ThemeContext = createContext({} as TThemeContext)
+export const ThemeContext = createContext({} as IThemeContext)
 
+/**
+ * A hook to use the theme context quickly
+ * @returns The theme context
+ */
 export const useTheme = () => {
-    if (!ThemeContext) throw new Error('useTheme must be used within a ThemeProvider');
+    const context = useContext(ThemeContext)
+    if (!context) throw new Error('useTheme must be used within a ThemeProvider');
 
-    return ThemeContext
+    return context
 }
 
+/**
+ * A provider context for theme management
+ */
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const defaultTheme = localStorage.getItem(keyString) || 'nord'
-    const [theme, _setTheme] = useState(defaultTheme)
+    const defaultTheme = localStorage.getItem(keyString) || defTheme
+    
+    const [_theme, _setTheme] = useState(defaultTheme)
     document.documentElement.setAttribute(keyString, defaultTheme);
 
     const setTheme = (theme: string) => {
+        if (theme === _theme) return;
+        if (!allThemes.includes(theme)) throw new Error('Invalid theme');
+
         localStorage.setItem(keyString, theme);
         document.documentElement.setAttribute(keyString, theme);
         _setTheme(theme);
@@ -28,7 +51,8 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
 
     return (
         <ThemeContext.Provider value={{
-            theme,
+            allThemes,
+            theme: _theme,
             setTheme
         }}>
             {children}

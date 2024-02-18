@@ -7,12 +7,12 @@ export default {
   daisyui: {
     themes: [
       {
-        nord: {
-          ...require("daisyui/src/theming/themes")["nord"],
-          "--rounded-btn": "2rem",
+        light: {
+          ...require("daisyui/src/theming/themes")["pastel"],
         }
-      }
+      },
+      'dark'
     ],
   },
-  plugins: [require("daisyui")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 }
