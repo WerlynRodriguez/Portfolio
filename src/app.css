@@ -1,3 +1,47 @@
 #banner {
-    border: 4px solid red;
+    --banner-bg: theme('colors.base-100');
+
+    background: radial-gradient(circle, transparent 20%, var(--banner-bg) 90%);
+
+    &::after {
+        content: "";
+        @apply absolute min-h-96 w-full -z-[1];
+
+        --line-c: theme('colors.base-300');
+
+        background-color: var(--banner-bg);
+        opacity: 0.6;
+        background-image:  linear-gradient(var(--line-c) 3px, transparent 3px), linear-gradient(to right, var(--line-c) 3px, var(--banner-bg) 3px);
+        background-size: 4rem 4rem;
+    }
+}
+
+.three-container {
+    @apply ml-3 border-l-2 border-base-content border-opacity-50 pl-4;
+}
+
+.land-section {
+    @apply py-10;
+
+    & .wrapper-content {
+        @apply mx-auto max-w-2xl px-8 text-left;
+
+        & .title, .subtitle {
+            @apply flex items-center;
+
+            & svg { @apply mr-2; }
+        } 
+
+        & .title {
+            @apply font-bold text-3xl mb-4;
+            
+            & svg { @apply w-8 h-8; }
+        }
+
+        & .subtitle {
+            @apply text-2xl py-4;
+
+            & svg { @apply w-6 h-6; }
+        }
+    }
 }

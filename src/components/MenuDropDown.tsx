@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { SwatchIcon } from '@heroicons/react/24/solid';
+import { SwatchIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 
 type TItem = {
     label: string;
@@ -29,6 +29,10 @@ interface IMenuDropDownProps {
      * The options to show in the dropdown 
      * */
     options: TItem[];
+    /**
+     * The selected item
+     */
+    selected?: string;
 }
 
 export default function (props: IMenuDropDownProps) {
@@ -37,7 +41,8 @@ export default function (props: IMenuDropDownProps) {
         options = [], 
         tabIndex = 0,
         align = null,
-        position = 'bottom'
+        position = 'bottom',
+        selected = null
     } = props;
 
     // This works and css focus is working
@@ -47,10 +52,13 @@ export default function (props: IMenuDropDownProps) {
                 <SwatchIcon className="w-5 h-5 ml-1" />
                 {label}
             </div>
-            <ul tabIndex={tabIndex} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabIndex={tabIndex} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52">
                 {options.map((item, index) => (
                     <li key={index} onClick={item.onClick}>
-                        <a>{item.label}</a>
+                        <a >
+                            {item.label}
+                            {selected === item.label && <CheckCircleIcon className="w-5 h-5 ml-1" />}
+                        </a>
                     </li>
                 ))}
             </ul>

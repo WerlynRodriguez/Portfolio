@@ -1,4 +1,23 @@
 {
-    "salute": "Hi, I'm Jonh Doe",
-    "saluteDesc": "I love programming using modern (and not so modern) technologies."
+    "salute": "Hi, I'm Werlyn Rodriguez",
+    "saluteDesc": "I love programming using new (or not so new) technologies.",
+    "saluteAction": "Let's Talk!",
+
+    "about": "About me",
+    "aboutDesc": "I'm a web and software developer with computer engineering training and React experience, focusing on providing innovative and functional solutions to drive project success.",
+
+    "skills": "Skills",
+    "skillsHint": "The number indicates the number of related technologies, click to see them.",
+    "all": "All",
+    "learning": "Learning",
+
+    "projects": "Projects",
+    "main": "Main",
+    "other": "Others",
+
+    "contact": "Contact",
+    "contactDesc": "I am always open to new projects and opportunities.",
+    "contactAction": "Send me an email!",
+
+    "relatedTo": "Related to"
 }

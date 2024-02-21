@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    scrollbar-color: theme('colors.base-content') theme('colors.base-200'); /* 1) thumb color 2) back color */
+    scrollbar-width: auto;
+    scroll-behavior: smooth;
+}

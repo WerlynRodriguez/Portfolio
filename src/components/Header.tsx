@@ -10,7 +10,7 @@ export default function() {
     }));
 
     return (
-        <header className="navbar bg-base-100 sticky top-0 z-50">
+        <header className="navbar bg-base-200 sticky top-0 z-50 shadow-md">
             <div className="flex-1">
                 <a className="btn btn-ghost text-xl" href='/'> Werlyn R. </a>
             </div>
@@ -19,6 +19,7 @@ export default function() {
                 <MenuDropDown
                     label="Theme"
                     align="end"
+                    selected={theme}
                     options={themeOptions}
                 />
             </div>

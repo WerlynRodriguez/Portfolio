@@ -9,6 +9,7 @@ interface IInputCopyProps {
      * @default label
      */
     value?: string;
+    className?: string;
 }
 
 /**
@@ -17,7 +18,8 @@ interface IInputCopyProps {
 export default function (props: IInputCopyProps) {
     const {
         label = "",
-        value = label
+        value = label,
+        className = ""
     } = props;
 
     const onClick = () => {
@@ -26,7 +28,7 @@ export default function (props: IInputCopyProps) {
 
     return (
         <div className="lg:tooltip tooltip-bottom" data-tip="copy">
-            <button className="btn btn-wide btn-neutral" onClick={onClick}>
+            <button className={`btn btn-wide btn-neutral ${className}`} onClick={onClick}>
                 {label}
                 <DocumentDuplicateIcon className="w-5 h-5"/>
             </button>

@@ -1,4 +1,23 @@
 {
-    "salute": "Hola, soy Jonh Doe",
-    "saluteDesc": "Me encanta programar utilizando tecnologías modernas (y no tan modernas)."
+    "salute": "Hola, soy Werlyn Rodríguez",
+    "saluteDesc": "Me encanta programar utilizando nuevas (o no tan nuevas) tecnologías.",
+    "saluteAction": "Conversemos!",
+
+    "about": "Acerca de mí",
+    "aboutDesc": "Soy desarrollador web y de software con formación en ingeniería en computación y experiencia en React, centrado en ofrecer soluciones innovadoras y funcionales para impulsar el éxito de los proyectos.",
+
+    "skills": "Habilidades",
+    "skillsHint": "El número indica la cantidad de tecnologías relacionadas, haz click para verlas.",
+    "all": "Todas",
+    "learning": "Aprendiendo",
+
+    "projects": "Proyectos",
+    "main": "Principales",
+    "other": "Otros",
+
+    "contact": "Contacto",
+    "contactDesc": "Siempre estoy abierto a nuevos proyectos y oportunidades.",
+    "contactAction": "Envíame un correo electrónico!",
+
+    "relatedTo": "Relacionado con"
 }
