@@ -26,6 +26,16 @@ import Certification from "./components/Certification";
 
 import "./app.css";
 
+/**
+ * @todo Move all info to public/data
+ * @todo Add React Router
+ * @todo Add a new route "/projects"
+ * @todo Add "more projects" button functionality
+ * @todo Add a new route "/projects/:name"
+ * @todo Add "paper airplane" decoration (floating around the page)
+ * @todo Repair CSS paper pattern
+ */
+
 const myGmail = "rdwerlynjose.16@gmail.com";
 
 const skills: { [key: string]: TSkill } = {
