@@ -2,8 +2,15 @@ export type TSkill = {
     [key: string]: string[];
 }
 
-export interface IBtnSkillProps {
-    iconName: string;
-    badge?: number;
-    onClick?: () => void;
+export type TCertificate = {
+    title: string;
+    icon: string;
+    from: string;
+    date: string;
+    link: string;
+}
+
+export interface ISectionData {
+    key: string;
+    label: string;
 }

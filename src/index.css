@@ -3,7 +3,18 @@
 @tailwind utilities;
 
 html {
-    scrollbar-color: theme('colors.base-content') theme('colors.base-200'); /* 1) thumb color 2) back color */
+    scrollbar-color: theme('colors.base-content') theme('colors.base-200');
     scrollbar-width: auto;
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem; /* header height */
+    
+    @apply overflow-y-auto overflow-x-hidden;
+}
+
+blockquote {
+    @apply text-sm lg:text-base text-base-content/70 italic;
+
+    & kbd {
+        @apply kbd kbd-sm;
+    }
 }

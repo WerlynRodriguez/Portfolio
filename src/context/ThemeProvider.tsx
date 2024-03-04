@@ -1,13 +1,14 @@
 import { createContext, useContext, useState } from "react"
+import { Themes } from "../utils/theme"
 
+/** The key to store the theme in local storage, and html attribute */
 const keyString = 'data-theme'
-const defTheme = 'light'
-const allThemes = ['light', 'dark']
+/** The default theme to use */
+const defTheme = Themes.light
 
 interface IThemeContext {
-    allThemes: string[]
+    /** The current theme */
     theme: string
-
     /**
      * Set the theme to the entire application
      * @param theme The theme to set
@@ -42,7 +43,9 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
 
     const setTheme = (theme: string) => {
         if (theme === _theme) return;
-        if (!allThemes.includes(theme)) throw new Error('Invalid theme');
+        
+        if (!(theme in Themes))
+            throw new Error('Invalid theme');
 
         localStorage.setItem(keyString, theme);
         document.documentElement.setAttribute(keyString, theme);
@@ -51,7 +54,6 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
 
     return (
         <ThemeContext.Provider value={{
-            allThemes,
             theme: _theme,
             setTheme
         }}>

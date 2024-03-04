@@ -1,0 +1,37 @@
+[
+  {
+    "title": "React (Basic)",
+    "icon": "React",
+    "from": "HackerRank",
+    "date": "08/10/2023",
+    "link": "https://www.hackerrank.com/certificates/a287ed549a63"
+  },
+  {
+    "title": "Javascript (Intermediate)",
+    "icon": "Javascript",
+    "from": "HackerRank",
+    "date": "06/10/2023",
+    "link": "https://www.hackerrank.com/certificates/0c8f473a07e7"
+  },
+  {
+    "title": "Node.js (Basic)",
+    "icon": "Nodedotjs",
+    "from": "HackerRank",
+    "date": "08/10/2023",
+    "link": "https://www.hackerrank.com/certificates/0b7aae03b6d5"
+  },
+  {
+    "title": "Python (Basic)",
+    "icon": "Python",
+    "from": "HackerRank",
+    "date": "30/10/2023",
+    "link": "https://www.hackerrank.com/certificates/45bd0a240596"
+  },
+  {
+    "title": "CSS (Basic)",
+    "icon": "Css3",
+    "from": "HackerRank",
+    "date": "30/10/2023",
+    "link": "https://www.hackerrank.com/certificates/55523d4790cf"
+  }
+]

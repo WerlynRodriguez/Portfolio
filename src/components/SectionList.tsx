@@ -19,7 +19,7 @@ export default function <T>(props: ISectionSkillprops<T>) {
             {icon}
             {label}
         </h2>
-        <div className="three-container flex flex-wrap gap-2">
+        <div className="three-container list-flex-wrap">
             {data.map((skill, i) => renderItem(skill, i))}
         </div>
     </>

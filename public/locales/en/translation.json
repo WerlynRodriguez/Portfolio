@@ -3,7 +3,7 @@
     "saluteDesc": "I love programming using new (or not so new) technologies.",
     "saluteAction": "Let's Talk!",
 
-    "about": "About me",
+    "about": "About",
     "aboutDesc": "I'm a web and software developer with computer engineering training and React experience, focusing on providing innovative and functional solutions to drive project success.",
 
     "skills": "Skills",
@@ -12,12 +12,17 @@
     "learning": "Learning",
 
     "projects": "Projects",
-    "main": "Main",
-    "other": "Others",
 
     "contact": "Contact",
     "contactDesc": "I am always open to new projects and opportunities.",
     "contactAction": "Send me an email!",
 
-    "relatedTo": "Related to"
+    "preparation": "Preparation",
+    "study": "Education",
+    "certifications": "Certifications",
+
+    "relatedTo": "Related to",
+
+    "designedBy": "Designed and developed by",
+    "theme": "Theme"
 }

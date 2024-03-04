@@ -1,19 +1,33 @@
-#banner {
-    --banner-bg: theme('colors.base-100');
+/* .paper-pattern {
+    --container-bg: theme('colors.base-100');
 
-    background: radial-gradient(circle, transparent 20%, var(--banner-bg) 90%);
+    background: radial-gradient(circle, transparent 20%, var(--container-bg) 90%);
 
     &::after {
         content: "";
-        @apply absolute min-h-96 w-full -z-[1];
+        @apply absolute w-full h-full -z-[1];
 
         --line-c: theme('colors.base-300');
 
-        background-color: var(--banner-bg);
+        background-color: var(--container-bg);
         opacity: 0.6;
-        background-image:  linear-gradient(var(--line-c) 3px, transparent 3px), linear-gradient(to right, var(--line-c) 3px, var(--banner-bg) 3px);
+        background-image:  
+            linear-gradient(var(--line-c) 3px, transparent 3px), 
+            linear-gradient(to right, var(--line-c) 3px, var(--container-bg) 3px);
         background-size: 4rem 4rem;
     }
+} */
+
+.paper-pattern {
+    --container-bg: theme('colors.base-100');
+    --line-c: theme('colors.base-300');
+
+    background-color: var(--container-bg);
+    background-image:  
+        linear-gradient(var(--line-c) 3px, transparent 3px), 
+        linear-gradient(to right, var(--line-c) 3px, var(--container-bg) 3px);
+    background-size: 4rem 4rem;
+    background-position: 2rem 2rem, 2rem 2rem;
 }
 
 .three-container {
@@ -44,4 +58,8 @@
             & svg { @apply w-6 h-6; }
         }
     }
+}
+
+.list-flex-wrap {
+    @apply flex flex-wrap gap-2 mt-2;
 }

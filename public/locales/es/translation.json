@@ -3,7 +3,7 @@
     "saluteDesc": "Me encanta programar utilizando nuevas (o no tan nuevas) tecnologías.",
     "saluteAction": "Conversemos!",
 
-    "about": "Acerca de mí",
+    "about": "Acerca",
     "aboutDesc": "Soy desarrollador web y de software con formación en ingeniería en computación y experiencia en React, centrado en ofrecer soluciones innovadoras y funcionales para impulsar el éxito de los proyectos.",
 
     "skills": "Habilidades",
@@ -12,12 +12,17 @@
     "learning": "Aprendiendo",
 
     "projects": "Proyectos",
-    "main": "Principales",
-    "other": "Otros",
 
     "contact": "Contacto",
     "contactDesc": "Siempre estoy abierto a nuevos proyectos y oportunidades.",
     "contactAction": "Envíame un correo electrónico!",
 
-    "relatedTo": "Relacionado con"
+    "preparation": "Preparación",
+    "study": "Educación",
+    "certifications": "Certificaciones",
+
+    "relatedTo": "Relacionado con",
+
+    "designedBy": "Diseñado por y desarrollado por",
+    "theme": "Tema"
 }
