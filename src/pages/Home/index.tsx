@@ -1,7 +1,7 @@
 import { useTranslation, Trans } from "react-i18next";
 import { useState } from "react";
-import Header from "../components/Header";
-import InputCopy from "../components/InputCopy";
+import Header from "../../components/Header";
+import InputCopy from "../../components/InputCopy";
 import {
     PaperAirplaneIcon,
     EnvelopeIcon,
@@ -12,17 +12,17 @@ import {
     AcademicCapIcon,
     DocumentIcon,
 } from "@heroicons/react/24/solid";
-import Dialog from "../components/Dialog";
-import SectionList from "../components/SectionList";
-import BtnSkill from "../components/BtnSkill";
-import { ISectionData, TAppDataLoader, TCertificate, TProject, TSkill, TSkillData } from "../types";
-import ProjectCard from "../components/ProjectCard";
+import Dialog from "../../components/Dialog";
+import SectionList from "../../components/SectionList";
+import BtnSkill from "../../components/BtnSkill";
+import { ISectionData, TAppDataLoader } from "../../types";
+import ProjectCard from "../../components/ProjectCard";
 
-import SimpleIcon from "../components/SimpleIcon";
-import { getIcon } from "../iconUtils";
-import Certification from "../components/Certification";
+import SimpleIcon from "../../components/SimpleIcon";
+import { getIcon } from "../../iconUtils";
+import Certification from "../../components/Certification";
 
-import "./app.css";
+import "./styles.css";
 import { useLoaderData } from "react-router-dom";
 
 /**

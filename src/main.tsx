@@ -13,7 +13,7 @@ const router = createBrowserRouter([
       const { loader } = await import('./loaders/app.loader')
       return loader();
     },
-    lazy: () => import('./pages/App'),
+    lazy: () => import('./pages/Home'),
   }
 ]);
 
