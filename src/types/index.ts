@@ -21,9 +21,29 @@ export type TProject = {
     img: string;
 }
 
-export interface ISectionData {
+/**
+ * A section data is the info of each section in the landing page.
+ */
+export type TSectionData = {
+    /**
+     * The key is used to create the id of the section.
+     */
     key: string;
+    /**
+     * The label is used to create the label of the section.
+     */
     label: string;
+}
+
+/**
+ * A section is a group of data that is used to create a section in the landing page.
+ * And it can be used with an 'a' tag to navigate to the section.
+ * @example
+ * <section id={Sections[section].key}>
+ * <a href={`#${Sections[section].key}`}>{Sections[section].label}</a>
+ */
+export type TSections = {
+    [key: string]: TSectionData;
 }
 
 export type TAppDataLoader = {

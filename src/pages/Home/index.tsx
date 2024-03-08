@@ -15,7 +15,7 @@ import {
 import Dialog from "../../components/Dialog";
 import SectionList from "../../components/SectionList";
 import BtnSkill from "../../components/BtnSkill";
-import { ISectionData, TAppDataLoader } from "../../types";
+import { TAppDataLoader, TSections } from "../../types";
 import ProjectCard from "../../components/ProjectCard";
 
 import SimpleIcon from "../../components/SimpleIcon";
@@ -24,6 +24,7 @@ import Certification from "../../components/Certification";
 
 import "./styles.css";
 import { useLoaderData } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 /**
  * @todo Move all info to public/data (do in other language)
@@ -57,7 +58,7 @@ export function Component() {
         skills
     ] = data.data;
 
-    const landSections: { [key: string]: ISectionData } = Object.freeze({
+    const landSections: TSections = Object.freeze({
         about: {
             key: "about",
             label: t('about')
@@ -232,37 +233,7 @@ export function Component() {
             </section>
         </main>
 
-        <footer className="footer footer-center p-10 bg-base-200 text-base-content">
-            <nav className="grid grid-flow-col gap-4">
-                {Object.keys(landSections).map((section, i) =>
-                    <a className="link link-hover" href={`#${landSections[section].key}`} key={i}>
-                        {landSections[section].label}
-                    </a>
-                )}
-            </nav>
-
-            <nav>
-                <div className="grid grid-flow-col gap-4">
-                    <a className="btn btn-neutral" href="https://github.com/WerlynRodriguez" target="_blank">
-                        <SimpleIcon className="w-6 h-6" path={getIcon("Github").path}/>
-                        Github
-                    </a>
-
-                    <a className="btn btn-neutral" href="https://www.linkedin.com/in/werlyn-rodriguez-760007183/" target="_blank">
-                        <SimpleIcon className="w-6 h-6" path={getIcon("Linkedin").path}/>
-                        Linkedin
-                    </a>
-                </div>
-            </nav>
-
-            <aside>
-                <p>
-                    2024 - {t('designedBy')} <a className="link" href="https://github.com/WerlynRodriguez" target="_blank">Werlyn</a> ♥
-                    <br/>
-                    <a className="link" href="https://github.com/WerlynRodriguez/Portfolio" target="_blank"> Portfolio code </a>
-                </p>
-            </aside>
-        </footer>
+        <Footer sections={landSections}/>
 
         <Dialog
             id="dialogSkills"
