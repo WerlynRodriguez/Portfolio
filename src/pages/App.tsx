@@ -1,7 +1,7 @@
 import { useTranslation, Trans } from "react-i18next";
 import { useEffect, useState } from "react";
-import Header from "./components/Header";
-import InputCopy from "./components/InputCopy";
+import Header from "../components/Header";
+import InputCopy from "../components/InputCopy";
 import {
     PaperAirplaneIcon,
     EnvelopeIcon,
@@ -12,20 +12,20 @@ import {
     AcademicCapIcon,
     DocumentIcon,
 } from "@heroicons/react/24/solid";
-import Dialog from "./components/Dialog";
-import SectionList from "./components/SectionList";
-import BtnSkill from "./components/BtnSkill";
-import { ISectionData, TCertificate, TProject, TSkill, TSkillData } from "./types";
-import ProjectCard from "./components/ProjectCard";
+import Dialog from "../components/Dialog";
+import SectionList from "../components/SectionList";
+import BtnSkill from "../components/BtnSkill";
+import { ISectionData, TCertificate, TProject, TSkill, TSkillData } from "../types";
+import ProjectCard from "../components/ProjectCard";
 
-import SimpleIcon from "./components/SimpleIcon";
-import { getIcon } from "./iconUtils";
-import Certification from "./components/Certification";
+import SimpleIcon from "../components/SimpleIcon";
+import { getIcon } from "../iconUtils";
+import Certification from "../components/Certification";
 
 import "./app.css";
 
 /**
- * @todo Move all info to public/data
+ * @todo Move all info to public/data (do in other language)
  * @todo Add React Router
  * @todo Add a new route "/projects"
  * @todo Add "more projects" button functionality
@@ -36,7 +36,7 @@ import "./app.css";
 
 const myGmail = "rdwerlynjose.16@gmail.com";
 
-export default function App() {
+export function Component() {
     const { t } = useTranslation();
 
     const [selected, setSelected] = useState<{ 

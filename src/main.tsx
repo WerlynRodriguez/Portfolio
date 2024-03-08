@@ -1,16 +1,23 @@
-import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
 import ThemeProvider from './context/ThemeProvider'
+import Loader from './components/Loader'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import './index.css'
 import './i18n'
-import Loader from './components/Loader'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    lazy: () => import('./pages/App'),
+  }
+]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <ThemeProvider>
-    <Suspense fallback={<Loader />}>
-      <App />
-    </Suspense>
+    <RouterProvider
+      router={router}
+      fallbackElement={<Loader />}
+    />
   </ThemeProvider>
 )
