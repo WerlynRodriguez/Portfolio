@@ -9,7 +9,7 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
-    ns: ['home', 'footer'],
+    ns: ['home', 'footer', 'header'],
     defaultNS: 'home'
   });
 

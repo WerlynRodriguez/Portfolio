@@ -5,7 +5,7 @@ import { Themes } from "../utils/theme";
 
 export default function() {
    const { theme, setTheme } = useTheme();
-   const { t } = useTranslation();
+   const { t } = useTranslation('header');
 
    /** Do the first character uppercase */
     const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
