@@ -25,3 +25,11 @@ export interface ISectionData {
     key: string;
     label: string;
 }
+
+export type TAppDataLoader = {
+    data: [
+        TCertificate[],
+        TProject[],
+        TSkillData
+    ]
+}

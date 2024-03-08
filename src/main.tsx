@@ -9,6 +9,10 @@ import './i18n'
 const router = createBrowserRouter([
   {
     path: '/',
+    async loader () {
+      const { loader } = await import('./loaders/app.loader')
+      return loader();
+    },
     lazy: () => import('./pages/App'),
   }
 ]);

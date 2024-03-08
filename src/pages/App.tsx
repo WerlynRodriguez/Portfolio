@@ -1,5 +1,5 @@
 import { useTranslation, Trans } from "react-i18next";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import InputCopy from "../components/InputCopy";
 import {
@@ -15,7 +15,7 @@ import {
 import Dialog from "../components/Dialog";
 import SectionList from "../components/SectionList";
 import BtnSkill from "../components/BtnSkill";
-import { ISectionData, TCertificate, TProject, TSkill, TSkillData } from "../types";
+import { ISectionData, TAppDataLoader, TCertificate, TProject, TSkill, TSkillData } from "../types";
 import ProjectCard from "../components/ProjectCard";
 
 import SimpleIcon from "../components/SimpleIcon";
@@ -23,10 +23,10 @@ import { getIcon } from "../iconUtils";
 import Certification from "../components/Certification";
 
 import "./app.css";
+import { useLoaderData } from "react-router-dom";
 
 /**
  * @todo Move all info to public/data (do in other language)
- * @todo Add React Router
  * @todo Add a new route "/projects"
  * @todo Add "more projects" button functionality
  * @todo Add a new route "/projects/:name"
@@ -47,11 +47,15 @@ export function Component() {
         section: ""
     });
 
-    const [certificateData, setCertificateData] = useState<TCertificate[]>([]);
-    const [projects, setProjects] = useState<TProject[]>([]);
-    const [skills, setSkills] = useState<TSkillData>({} as TSkillData);
-
     const [selectedCert, setSelectedCert] = useState<number>(0);
+
+    const data = useLoaderData() as TAppDataLoader;
+
+    const [
+        certificates, 
+        projects, 
+        skills
+    ] = data.data;
 
     const landSections: { [key: string]: ISectionData } = Object.freeze({
         about: {
@@ -75,41 +79,6 @@ export function Component() {
             label: t('contact')
         }
     })
-
-    useEffect(() => {
-        const urlPath = (url: string) => `/data/${url}.json?url`;
-        const urls = ['certifications', 'projects', 'skills'];
-
-        const abortController = new AbortController();
-
-        const fetchData = async () => {
-            try {
-                const responses = await Promise.all(urls.map(url => 
-                    fetch(
-                        urlPath(url), 
-                        { signal: abortController.signal }
-                    )
-                ));
-                const data = await Promise.all(responses.map(response => response.json()));
-
-                const [
-                    certificateData,
-                    projects,
-                    skills
-                ] = data;
-
-                setCertificateData(certificateData);
-                setProjects(projects);
-                setSkills(skills);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchData();
-
-        return () => abortController.abort();
-    }, []);
 
     /**
      * Use this function to render a skill button
@@ -219,11 +188,11 @@ export function Component() {
                     </h1>
 
                     <div className="grid place-items-center w-full py-4 paper-pattern">
-                        <Certification {...certificateData[selectedCert]}/>
+                        <Certification {...certificates[selectedCert]}/>
                     </div>
 
                     <div className="list-flex-wrap justify-center pt-4">
-                        {certificateData.map((cert, i) =>
+                        {certificates.map((cert, i) =>
                             <BtnSkill
                                 className={i === selectedCert ? "btn-primary" : ""}
                                 iconName={cert.icon} 
