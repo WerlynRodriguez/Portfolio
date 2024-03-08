@@ -9,15 +9,13 @@ import {
     PlusIcon,
     UserIcon,
     PuzzlePieceIcon,
-    PencilIcon,
-    DocumentCheckIcon,
     AcademicCapIcon,
     DocumentIcon,
 } from "@heroicons/react/24/solid";
 import Dialog from "./components/Dialog";
 import SectionList from "./components/SectionList";
 import BtnSkill from "./components/BtnSkill";
-import { ISectionData, TCertificate, TSkill } from "./types";
+import { ISectionData, TCertificate, TProject, TSkill, TSkillData } from "./types";
 import ProjectCard from "./components/ProjectCard";
 
 import SimpleIcon from "./components/SimpleIcon";
@@ -38,56 +36,20 @@ import "./app.css";
 
 const myGmail = "rdwerlynjose.16@gmail.com";
 
-const skills: { [key: string]: TSkill } = {
-    all: {
-        Javascript: ["Typescript", "Jquery"],
-        React: ["Antdesign", "Graphql", "I18next", "Reactrouter", "Redux", "Semanticuireact", "Socketdotio", "Vite", "Zustand", "Axios"],
-        Tailwindcss: ["Daisyui"],
-        Nodedotjs: ["Express", "JSONWebTokens", "Mongoose", "Nodemon", "Npm", "Yarn", "Socketdotio", "Webpack", "Cron", "Dotenv"],
-        Dotnet: ["Csharp", "C", "Cplusplus", "Graphql", "JSONWebTokens"],
-        ReactNative: ["Expo", "ReactNativePaper"],
-        Git: ["Github", "Githubactions", "Githubpages", "Githubcopilot"],
-        Python: ["Django", "Flask"],
-        Kotlin: [],
-        Mongodb: ["Mongoose"],
-        Sql: ["Mysql", "Sqlite", "SqlServer"],
-    },
-    learning: {
-        Nextdotjs: [],
-        Svelte: [],
-        Vuedotjs: [],
-        Astro: [],
-        Htmx: []
-
-    }
-}
-
-const projects = [
-    {
-        title: "Sistema web Nancurunaisa",
-        desc: "Sistema web de gestión de servicios terapéuticos para clínica oriental Nancurunaisa",
-        techs: ["React", "Dotnet", "Graphql"],
-        img: "/images/banner_project_nancu_low.webp?url"
-        //img: "public\images\banner_project_nancu.png"
-    }, {
-        title: "Rimember",
-        desc: "Aplicación para Android que permite ver videos y fotos de tu galería de manera aleatoria",
-        techs: ["React", "Expo", "I18next"],
-        img: "/images/banner_project_rimem_low.webp?url"
-    }, {
-        title: "ActiviTracker",
-        desc: "Aplicación web para el seguimiento de actividad de usuarios. Registrando el historial de los plazos activos en la app.",
-        techs: ["React", "Express", "Mongodb"],
-        img: "/images/banner_project_activ_low.webp?url"
-    }
-]
-
 export default function App() {
     const { t } = useTranslation();
-    const [selectedSkill, setSelectedSkill] = useState<string>("");
-    const [selectedSection, setSelectedSection] = useState<string>("");
+
+    const [selected, setSelected] = useState<{ 
+        skill: string, 
+        section: string 
+    }>({ 
+        skill: "", 
+        section: ""
+    });
 
     const [certificateData, setCertificateData] = useState<TCertificate[]>([]);
+    const [projects, setProjects] = useState<TProject[]>([]);
+    const [skills, setSkills] = useState<TSkillData>({} as TSkillData);
 
     const [selectedCert, setSelectedCert] = useState<number>(0);
 
@@ -115,13 +77,36 @@ export default function App() {
     })
 
     useEffect(() => {
-        const certificateUrl = "/data/certifications.json?url";
+        const urlPath = (url: string) => `/data/${url}.json?url`;
+        const urls = ['certifications', 'projects', 'skills'];
+
         const abortController = new AbortController();
 
-        fetch(certificateUrl, { signal: abortController.signal })
-            .then(response => response.json())
-            .then(data => setCertificateData(data))
-            .catch(error => console.error(error));
+        const fetchData = async () => {
+            try {
+                const responses = await Promise.all(urls.map(url => 
+                    fetch(
+                        urlPath(url), 
+                        { signal: abortController.signal }
+                    )
+                ));
+                const data = await Promise.all(responses.map(response => response.json()));
+
+                const [
+                    certificateData,
+                    projects,
+                    skills
+                ] = data;
+
+                setCertificateData(certificateData);
+                setProjects(projects);
+                setSkills(skills);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
 
         return () => abortController.abort();
     }, []);
@@ -138,8 +123,7 @@ export default function App() {
                 onClick={() => {
                     if (skills[section][skill].length === 0) return;
 
-                    setSelectedSkill(skill);
-                    setSelectedSection(section);
+                    setSelected({ skill, section });
                 }}
             />
         )
@@ -190,23 +174,19 @@ export default function App() {
                         {t('skillsHint')} (<kbd>Click</kbd>)
                     </blockquote>
 
-                    <SectionList
-                        label={t('all')}
-                        icon={<DocumentCheckIcon/>}
-                        data={Object.keys(skills.all).sort()}
-                        renderItem={(skill, i) => 
-                            <SectionSkill skill={skill} section="all" key={i}/>
-                        }
-                    />
-
-                    <SectionList
-                        label={t('learning')}
-                        icon={<PencilIcon/>}
-                        data={Object.keys(skills.learning).sort()}
-                        renderItem={(skill, i) => 
-                            <SectionSkill skill={skill} section="learning" key={i}/>
-                        }
-                    />
+                    {Object.keys(skills).map((section, i) => 
+                        (
+                            <SectionList
+                                key={i}
+                                label={t(section)}
+                                icon={<AcademicCapIcon/>}
+                                data={Object.keys(skills[section]).sort()}
+                                renderItem={(skill, i) => 
+                                    <SectionSkill skill={skill} section={section} key={i}/>
+                                }
+                            />
+                        )
+                    )}
                 </div>
             </section>
 
@@ -294,12 +274,12 @@ export default function App() {
 
             <nav>
                 <div className="grid grid-flow-col gap-4">
-                    <a className="btn btn-ghost" href="https://github.com/WerlynRodriguez" target="_blank">
+                    <a className="btn btn-neutral" href="https://github.com/WerlynRodriguez" target="_blank">
                         <SimpleIcon className="w-6 h-6" path={getIcon("Github").path}/>
                         Github
                     </a>
 
-                    <a className="btn btn-ghost" href="https://www.linkedin.com/in/werlyn-rodriguez-760007183/" target="_blank">
+                    <a className="btn btn-neutral" href="https://www.linkedin.com/in/werlyn-rodriguez-760007183/" target="_blank">
                         <SimpleIcon className="w-6 h-6" path={getIcon("Linkedin").path}/>
                         Linkedin
                     </a>
@@ -317,14 +297,16 @@ export default function App() {
 
         <Dialog
             id="dialogSkills"
-            title={`${t('relatedTo')} ${selectedSkill}:`}
-            open={selectedSkill !== ""}
-            onClose={() => setSelectedSkill("")}
+            title={`${t('relatedTo')} ${selected.skill}:`}
+            open={selected.skill !== ""}
+            onClose={() => setSelected({ skill: "", section: "" })}
         >
-            {selectedSkill && selectedSection && (
+            {selected.skill && selected.section && (
                 <div className="list-flex-wrap">
-                    {skills[selectedSection][selectedSkill].sort().map((subskill, i) =>
-                        <BtnSkill iconName={subskill}/>
+                    {skills[selected.section][selected.skill]
+                        .sort()
+                        .map((subskill, i) =>
+                            <BtnSkill iconName={subskill}/>
                     )}
                 </div>
             )}

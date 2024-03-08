@@ -1,0 +1,23 @@
+{
+    "all": {
+        "Javascript": ["Typescript", "Jquery"],
+        "React": ["Antdesign", "Graphql", "I18next", "Reactrouter", "Redux", "Semanticuireact", "Socketdotio", "Vite", "Zustand", "Axios"],
+        "Tailwindcss": ["Daisyui"],
+        "Nodedotjs": ["Express", "JSONWebTokens", "Mongoose", "Nodemon", "Npm", "Yarn", "Socketdotio", "Webpack", "Cron", "Dotenv"],
+        "Dotnet": ["Csharp", "C", "Cplusplus", "Graphql", "JSONWebTokens"],
+        "ReactNative": ["Expo", "ReactNativePaper"],
+        "Git": ["Github", "Githubactions", "Githubpages", "Githubcopilot"],
+        "Python": ["Django", "Flask"],
+        "Kotlin": [],
+        "Mongodb": ["Mongoose"],
+        "Sql": ["Mysql", "Sqlite", "SqlServer"]
+    },
+    "learning": {
+        "Nextdotjs": [],
+        "Svelte": [],
+        "Vuedotjs": [],
+        "Astro": [],
+        "Htmx": []
+
+    }
+}
