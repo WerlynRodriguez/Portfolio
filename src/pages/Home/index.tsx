@@ -37,7 +37,7 @@ import { useLoaderData } from "react-router-dom";
 const myGmail = "rdwerlynjose.16@gmail.com";
 
 export function Component() {
-    const { t } = useTranslation();
+    const { t } = useTranslation('home');
 
     const [selected, setSelected] = useState<{ 
         skill: string, 
