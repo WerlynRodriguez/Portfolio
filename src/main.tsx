@@ -14,6 +14,10 @@ const router = createBrowserRouter([
       return loader();
     },
     lazy: () => import('./pages/Home'),
+  },
+  {
+    path: '/projects',
+    lazy: () => import('./pages/Projects'),
   }
 ]);
 

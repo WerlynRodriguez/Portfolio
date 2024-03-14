@@ -171,10 +171,10 @@ export function Component() {
                         {projects.map((project, i) => <ProjectCard {...project} key={i}/>)}
                         <div className="card bg-base-100">
                             <div className="card-body">
-                                <button className="btn xs:btn-sm lg:btn-md btn-primary">
+                                <a className="btn xs:btn-sm lg:btn-md btn-primary" href="/projects">
                                     <PlusIcon className="w-5 h-5"/>
                                     Ver más
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
