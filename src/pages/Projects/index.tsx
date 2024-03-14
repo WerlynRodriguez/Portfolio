@@ -10,7 +10,7 @@ export function Component() {
             <h1 className="text-4xl font-bold">Projects</h1>
         </main>
 
-        <Footer sections={{}} />
+        <Footer />
     </>
     );
 }

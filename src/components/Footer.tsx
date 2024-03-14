@@ -4,7 +4,7 @@ import { TSections } from "../types";
 import SimpleIcon from "./SimpleIcon";
 
 interface IFooterProps {
-    sections: TSections;
+    sections?: TSections;
 }
 
 /**
@@ -12,7 +12,9 @@ interface IFooterProps {
  */
 export default function (props: IFooterProps) {
     const { t } = useTranslation('footer');
-    const { sections } = props;
+    const { 
+        sections = {}
+    } = props;
 
     const socials = [
         {
