@@ -1,4 +1,4 @@
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import Header from "../../components/Header";
 import InputCopy from "../../components/InputCopy";
@@ -17,14 +17,12 @@ import SectionList from "../../components/SectionList";
 import BtnSkill from "../../components/BtnSkill";
 import { TAppDataLoader, TSections } from "../../types";
 import ProjectCard from "../../components/ProjectCard";
-
-import SimpleIcon from "../../components/SimpleIcon";
-import { getIcon } from "../../iconUtils";
 import Certification from "../../components/Certification";
 
-import "./styles.css";
 import { useLoaderData } from "react-router-dom";
 import Footer from "../../components/Footer";
+
+import "./styles.css";
 
 /**
  * @todo Move all info to public/data (do in other language)
@@ -54,8 +52,8 @@ export function Component() {
 
     const [
         certificates, 
-        projects, 
-        skills
+        skills,
+        projects
     ] = data.data;
 
     const landSections: TSections = Object.freeze({
@@ -86,12 +84,14 @@ export function Component() {
      */
     function SectionSkill(props: { skill: string, section: string }) {
         const { skill, section } = props;
+        const skillData = skills[section][skill];
+
         return (
             <BtnSkill
                 iconName={skill}
-                badge={skills[section][skill].length || undefined}
+                badge={skillData.length || undefined}
                 onClick={() => {
-                    if (skills[section][skill].length === 0) return;
+                    if (skillData.length === 0) return;
 
                     setSelected({ skill, section });
                 }}
@@ -246,7 +246,7 @@ export function Component() {
                     {skills[selected.section][selected.skill]
                         .sort()
                         .map((subskill, i) =>
-                            <BtnSkill iconName={subskill}/>
+                            <BtnSkill iconName={subskill} key={i}/>
                     )}
                 </div>
             )}

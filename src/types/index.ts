@@ -49,7 +49,7 @@ export type TSections = {
 export type TAppDataLoader = {
     data: [
         TCertificate[],
-        TProject[],
-        TSkillData
+        TSkillData,
+        TProject[]
     ]
 }

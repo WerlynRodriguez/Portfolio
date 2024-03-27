@@ -1,0 +1,12 @@
+[
+    {
+        "techs": ["React", "Dotnet", "Graphql"],
+        "img": "/images/banner_project_nancu_low.webp?url"
+    }, {
+        "techs": ["React", "Expo", "I18next"],
+        "img": "/images/banner_project_rimem_low.webp?url"
+    }, {
+        "techs": ["React", "Express", "Mongodb"],
+        "img": "/images/banner_project_activ_low.webp?url"
+    }
+]

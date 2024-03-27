@@ -5,6 +5,7 @@ interface IProjectCardProps {
     title: string;
     desc: string;
     techs: string[];
+    onClick?: () => void;
 }
 
 export default function (props: IProjectCardProps) {
@@ -12,11 +13,12 @@ export default function (props: IProjectCardProps) {
         img,
         title,
         desc,
-        techs
+        techs,
+        onClick = () => {}
     } = props;
 
     return (
-        <div className="card card-compact shadow-xl bg-base-200">
+        <div className="card card-compact shadow-xl bg-base-200" onClick={onClick}>
             <figure>
                 <img src={img} alt="project" className="aspect-video object-cover object-center"/>
             </figure>
