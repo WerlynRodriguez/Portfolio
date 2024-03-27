@@ -2,5 +2,13 @@
     {
         "techs": ["Expo", "Redux", "React"],
         "img": "/images/banner_project_chall_low.webp?url"
+    },
+    {
+        "techs": ["Nestjs", "Graphql", "Mongodb"],
+        "img": "/images/banner_project_company_low.webp?url"
+    },
+    {
+        "techs": ["React", "Express", "Socketdotio"],
+        "img": "/images/banner_project_banc_low.webp?url"
     }
 ]

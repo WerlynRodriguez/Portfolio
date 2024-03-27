@@ -2,5 +2,13 @@
     {
         "title": "Aplicación de gestión de artesanías",
         "desc": "Aplicación desarrollada en 1 día, ganadora del 2do lugar, para una competencia frontend, organizada por RedSofa."
+    },
+    {
+        "title": "Company Maker",
+        "desc": "Una plantilla para backend, con un CRUD básico, que registra compañias y una lista de sus empleados mediante querys de Graphql."
+    },
+    {
+        "title": "Bancopoly",
+        "desc": "Juego de gestión e intercambio de finanzas y propiedades entre usuarios, con sistema de notificaciones."
     }
 ]
