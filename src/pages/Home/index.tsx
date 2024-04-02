@@ -25,10 +25,7 @@ import Footer from "../../components/Footer";
 import "./styles.css";
 
 /**
- * @todo Move all info to public/data (do in other language)
- * @todo Add a new route "/projects"
- * @todo Add "more projects" button functionality
- * @todo Add a new route "/projects/:name"
+ * @todo Fix reloading icons on every render
  * @todo Add "paper airplane" decoration (floating around the page)
  * @todo Repair CSS paper pattern
  */
@@ -36,6 +33,14 @@ import "./styles.css";
 const myGmail = "rdwerlynjose.16@gmail.com";
 
 export function Component() {
+    const data = useLoaderData() as TAppDataLoader;
+
+    const [
+        certificates, 
+        skills,
+        projects
+    ] = data.data;
+
     const { t } = useTranslation('home');
 
     const [selected, setSelected] = useState<{ 
@@ -48,13 +53,6 @@ export function Component() {
 
     const [selectedCert, setSelectedCert] = useState<number>(0);
 
-    const data = useLoaderData() as TAppDataLoader;
-
-    const [
-        certificates, 
-        skills,
-        projects
-    ] = data.data;
 
     const landSections: TSections = Object.freeze({
         about: {
@@ -145,17 +143,15 @@ export function Component() {
                     </blockquote>
 
                     {Object.keys(skills).map((section, i) => 
-                        (
-                            <SectionList
-                                key={i}
-                                label={t(section)}
-                                icon={<AcademicCapIcon/>}
-                                data={Object.keys(skills[section]).sort()}
-                                renderItem={(skill, i) => 
-                                    <SectionSkill skill={skill} section={section} key={i}/>
-                                }
-                            />
-                        )
+                        <SectionList
+                            key={`${section}-${i}`}
+                            label={t(section)}
+                            icon={<AcademicCapIcon/>}
+                            data={Object.keys(skills[section]).sort()}
+                            renderItem={(skill, i) => 
+                                <SectionSkill skill={skill} section={section} key={i}/>
+                            }
+                        />
                     )}
                 </div>
             </section>

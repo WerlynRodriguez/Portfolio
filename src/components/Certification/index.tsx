@@ -1,12 +1,11 @@
+import { useEffect, useState } from "react";
 import {
     CalendarDaysIcon,
     CheckBadgeIcon
 } from "@heroicons/react/24/solid";
 import SimpleIcon from "../SimpleIcon";
-import { getIcon } from "../../iconUtils";
 
 import './styles.css';
-import { useEffect, useState } from "react";
 
 interface ICertificationProps {
     title: string;
@@ -41,7 +40,7 @@ export default function (props: ICertificationProps) {
             target="_blank" 
             rel="noreferrer"
         >
-            <SimpleIcon className="card-icon" path={getIcon(icon).path} />
+            <SimpleIcon className="card-icon" name={icon} showTitle/>
 
             <CheckBadgeIcon className="card-badge" />
 

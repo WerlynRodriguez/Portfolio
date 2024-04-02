@@ -1,3 +1,9 @@
+export type TSimpleIcon = {
+    hex: string,
+    path: string,
+    title: string
+}
+
 export type TSkill = {
     [key: string]: string[];
 }

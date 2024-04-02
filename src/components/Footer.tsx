@@ -38,8 +38,7 @@ export default function (props: IFooterProps) {
 
         return (
             <a className="btn btn-neutral" href={link} target="_blank">
-                <SimpleIcon className="w-6 h-6" path={iconInfo.path}/>
-                {icon}
+                <SimpleIcon className="w-6 h-6" name={icon} showTitle/>
             </a>
         )
     }
