@@ -26,7 +26,9 @@ import "./styles.css";
 
 /**
  * @todo Add "paper airplane" decoration (floating around the page)
- * @todo Repair CSS paper pattern
+ * @todo Add 2 more themes (twilight, obsidian)
+ * @todo Add Click on Cardproject to open a dialog/page with more info.
+ * @todo Add Search bar to filter projects by name.
  */
 
 const myGmail = "rdwerlynjose.16@gmail.com";
@@ -83,7 +85,7 @@ export function Component() {
         
             <section id="banner" className="hero min-h-96">
                 <div className="hero-content flex-col gap-2 lg:flex-row lg:gap-16">
-                    <div className="max-w-md text-center bg-transparent backdrop-blur-sm rounded-lg">
+                    <div className="max-w-md text-center bg-transparent backdrop-blur-sm rounded-lg" >
                         <h1 className="text-5xl lg:text-6xl font-bold text-pretty [&::selection]:text-base-content brightness-150 contrast-150 [&::selection]:bg-purple-700/20">
                             {t('salute')}
                         </h1>
@@ -178,7 +180,7 @@ export function Component() {
                         {landSections.certifications.label}
                     </h1>
 
-                    <div className="grid place-items-center w-full py-4 paper-pattern">
+                    <div className="grid place-items-center w-full py-4">
                         <Certification {...certificates[selectedCert]}/>
                     </div>
 
