@@ -15,17 +15,16 @@ import {
 import Dialog from "../../components/Dialog";
 import SectionList from "../../components/SectionList";
 import BtnSkill from "../../components/BtnSkill";
-import { TAppDataLoader, TSections } from "../../types";
 import ProjectCard from "../../components/ProjectCard";
 import Certification from "../../components/Certification";
 
 import { useLoaderData } from "react-router-dom";
 import Footer from "../../components/Footer";
 
+import type { TAppDataLoader, TSections } from "../../types";
 import "./styles.css";
 
 /**
- * @todo Fix reloading icons on every render
  * @todo Add "paper airplane" decoration (floating around the page)
  * @todo Repair CSS paper pattern
  */
@@ -77,26 +76,6 @@ export function Component() {
         }
     })
 
-    /**
-     * Use this function to render a skill button
-     */
-    function SectionSkill(props: { skill: string, section: string }) {
-        const { skill, section } = props;
-        const skillData = skills[section][skill];
-
-        return (
-            <BtnSkill
-                iconName={skill}
-                badge={skillData.length || undefined}
-                onClick={() => {
-                    if (skillData.length === 0) return;
-
-                    setSelected({ skill, section });
-                }}
-            />
-        )
-    }
-
     return (<>
         <Header/>
 
@@ -144,12 +123,27 @@ export function Component() {
 
                     {Object.keys(skills).map((section, i) => 
                         <SectionList
-                            key={`${section}-${i}`}
+                            key={`SectionList${section}-${i}`}
                             label={t(section)}
                             icon={<AcademicCapIcon/>}
                             data={Object.keys(skills[section]).sort()}
-                            renderItem={(skill, i) => 
-                                <SectionSkill skill={skill} section={section} key={i}/>
+                            renderItem = {(skill, i) => 
+                                {
+                                    const skilldata = skills[section][skill];
+                                    return (
+                                        <BtnSkill
+                                            key={`BtnSkill${skill}-${i}`}
+                                            iconName={skill}
+                                            badge={skilldata.length || undefined}
+                                            onClick={() => {
+                                                    if (skilldata.length == 0) return;
+
+                                                    setSelected({ skill, section })
+                                                }
+                                            }
+                                        />
+                                    )
+                                }
                             }
                         />
                     )}

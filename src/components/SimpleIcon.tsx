@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { TSimpleIcon } from "../types";
 import { getIcon } from "../iconUtils";
+import Loader from "./Loader";
 
 interface IIconProps {
     name: string;
@@ -30,11 +31,12 @@ export default function (props: IIconProps) {
 
         {
             icon ?
-            <svg className={className} fill={icon?.hex ? `#${icon?.hex}` : 'currentColor'} viewBox="0 0 24 24">
-                <path d={icon?.path}/>
-            </svg>
+            icon.path &&
+                <svg className={className} fill={icon?.hex ? `#${icon?.hex}` : 'currentColor'} viewBox="0 0 24 24">
+                    <path d={icon?.path}/>
+                </svg>
             :
-            null
+            <Loader />
         }
         {showTitle && icon?.title}
     </>
