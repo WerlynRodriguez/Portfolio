@@ -40,7 +40,7 @@ export default function (props: ICertificationProps) {
             target="_blank" 
             rel="noreferrer"
         >
-            <SimpleIcon className="card-icon" name={icon} showTitle/>
+            <SimpleIcon className="card-icon" name={icon}/>
 
             <CheckBadgeIcon className="card-badge" />
 
