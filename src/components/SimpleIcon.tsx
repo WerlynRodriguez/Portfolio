@@ -19,7 +19,6 @@ export default function (props: IIconProps) {
     const [icon, setIcon] = useState<TSimpleIcon | null>(null);
 
     useEffect(() => {
-        console.log('reload icon');
         (async () => {
             const icon = await getIcon(name);
             setIcon(icon);
