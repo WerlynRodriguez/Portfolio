@@ -20,11 +20,18 @@ export type TCertificate = {
     link: string;
 }
 
+export type TLink = {
+    name: string;
+    icon: string;
+    url: string;
+}
+
 export type TProject = {
+    id: string;
     title: string;
     desc: string;
     techs: string[];
-    img: string;
+    links: TLink[];
 }
 
 /**

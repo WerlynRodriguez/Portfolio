@@ -8,7 +8,7 @@ interface IDialogProps {
     /**
      * A title for the dialog
      * */
-    title: string;
+    title?: string;
     children: React.ReactNode;
     /**
      * Whether the dialog is open or not
@@ -48,7 +48,7 @@ export default function Dialog(props: IDialogProps) {
     return (
         <dialog id={id} className="modal" ref={dialogRef} onClose={onClose}>
             <div className="modal-box">
-                <h3 className="font-bold text-lg">{title}</h3>
+                {title && <h3 className="font-bold text-lg">{title}</h3>}
 
                 {open && children}
 

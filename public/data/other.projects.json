@@ -1,14 +1,39 @@
 [
     {
+        "id": "chall",
         "techs": ["Expo", "Redux", "React"],
-        "img": "/images/banner_project_chall_low.webp?url"
+        "links": [
+            {
+                "name": "Repo",
+                "icon": "github",
+                "url": "https://github.com/WerlynRodriguez/ChallengeDay"
+            }, {
+                "name": "Apk",
+                "icon": "android",
+                "url": "https://github.com/WerlynRodriguez/ChallengeDay/tree/master/Build"
+            }
+        ]
     },
     {
+        "id": "company",
         "techs": ["Nestjs", "Graphql", "Mongodb"],
-        "img": "/images/banner_project_company_low.webp?url"
+        "links": [
+            {
+                "name": "Repo",
+                "icon": "github",
+                "url": "https://github.com/WerlynRodriguez/the-company-maker"
+            }
+        ]
     },
     {
+        "id": "banc",
         "techs": ["React", "Express", "Socketdotio"],
-        "img": "/images/banner_project_banc_low.webp?url"
+        "links": [
+            {
+                "name": "Repo",
+                "icon": "github",
+                "url": "https://github.com/WerlynRodriguez/BancoPoly"
+            }
+        ]
     }
 ]

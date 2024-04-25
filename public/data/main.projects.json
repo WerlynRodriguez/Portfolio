@@ -1,12 +1,49 @@
 [
     {
+        "id": "nancu",
         "techs": ["React", "Dotnet", "Graphql"],
-        "img": "/images/banner_project_nancu_low.webp?url"
+        "links": [
+            {
+                "name": "Frontend Repo",
+                "icon": "github",
+                "url": "https://github.com/WerlynRodriguez/NancurunaisaFrontEnd"
+            }, {
+                "name": "Backend Repo",
+                "icon": "github",
+                "url": "https://github.com/Sjeffmichael/sistema-de-gestion-de-servicios-terapeuticos"
+            }
+        ]
     }, {
+        "id": "rimem",
         "techs": ["React", "Expo", "I18next"],
-        "img": "/images/banner_project_rimem_low.webp?url"
+        "links": [
+            {
+                "name": "Repo",
+                "icon": "github",
+                "url": "https://github.com/WerlynRodriguez/Rimember"
+            }, {
+                "name": "Play Store",
+                "icon": "googleplay",
+                "url": "https://play.google.com/store/apps/details?id=com.werlynDev.Rimember"
+            }
+        ]
     }, {
+        "id": "activ",
         "techs": ["React", "Express", "Mongodb"],
-        "img": "/images/banner_project_activ_low.webp?url"
+        "links": [
+            {
+                "name": "Frontend Repo",
+                "icon": "github",
+                "url": "https://github.com/WerlynRodriguez/ActiviTracker"
+            }, {
+                "name": "Backend Repo",
+                "icon": "github",
+                "url": "https://github.com/WerlynRodriguez/ActiviTracker-Back"
+            }, {
+                "name": "Demo",
+                "icon": "webpack",
+                "url": "https://activitracker.onrender.com/"
+            }
+        ]
     }
 ]

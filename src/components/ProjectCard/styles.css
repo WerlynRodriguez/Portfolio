@@ -1,0 +1,16 @@
+.project_card {
+  /* Links are hidden, but when the card is focus the links are unhiden and skills are hiden */
+  & .project_card-links {
+    display: none;
+  }
+
+  &:hover {
+    & .project_card-links {
+      display: block;
+    }
+
+    & .project_card-skills {
+      display: none;
+    }
+  }
+}
