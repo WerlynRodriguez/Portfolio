@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import ThemeProvider from "./context/ThemeProvider";
 import Loader from "./components/Loader";
+import Error from "./pages/Error";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import "./index.css";
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
       return loader();
     },
     lazy: () => import("./pages/Home"),
+    errorElement: <Error />,
   },
   {
     path: "/projects",

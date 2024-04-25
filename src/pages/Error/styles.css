@@ -1,0 +1,51 @@
+.status-error {
+  position: relative;
+
+  text-shadow: 0.05em 0 0 oklch(var(--a)), 0.025em 0.05em 0 oklch(var(--s)),
+    -0.025em -0.05em 0 oklch(var(--p));
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    animation: glitch 5s infinite linear;
+    @apply absolute opacity-80 top-0 left-0;
+  }
+
+  &::before {
+    clip-path: polygon(0 65%, 100% 20%, 100% 100%, 0 70%);
+    animation-duration: 6s;
+    animation-delay: 0.5s;
+  }
+}
+
+/* No motion devices */
+@media (prefers-reduced-motion: reduce) {
+  .status-error::before,
+  .status-error::after {
+    animation: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 oklch(var(--a)), 0.025em 0.05em 0 oklch(var(--s)),
+      -0.025em -0.05em 0 oklch(var(--p));
+  }
+  2% {
+    text-shadow: -0.025em 0.05em 0 oklch(var(--p)), 0.05em 0 0 oklch(var(--a)),
+      0.025em 0.05em 0 oklch(var(--s));
+  }
+  4% {
+    text-shadow: 0.055em 0.05em 0 oklch(var(--s)),
+      -0.025em 0.05em 0 oklch(var(--p)), 0.05em 0 0 oklch(var(--a));
+  }
+  6% {
+    text-shadow: -0.025em 0.05em 0 oklch(var(--p)),
+      0.095em 0.05em 0 oklch(var(--s)), 0.05em 0 0 oklch(var(--a));
+  }
+  7%,
+  100% {
+    text-shadow: 0.05em 0 0 oklch(var(--a)), 0.025em 0.05em 0 oklch(var(--s)),
+      -0.025em -0.05em 0 oklch(var(--p));
+  }
+}

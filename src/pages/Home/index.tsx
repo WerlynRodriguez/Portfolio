@@ -28,7 +28,6 @@ import "./styles.css";
  * @todo Add Animated squares to the background of the hero section.
  * @todo Add animation to section when scrolling.
  * @todo Add animations between url changes.
- * @todo Add error page.
  * @todo Add 2 more themes (twilight, obsidian)
  * @todo Add Search bar to filter projects by name.
  */
