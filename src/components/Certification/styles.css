@@ -1,41 +1,42 @@
 .certification-card {
-    @apply card bg-gradient-to-tr from-info to-info/80 aspect-video max-w-sm w-5/6;
-    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30%, 80% 0);
+  @apply card bg-gradient-to-tr from-info to-info/80 aspect-video max-w-sm w-5/6;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30%, 80% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30%, 80% 0);
 
-    &::after {
-        content: '';
-        width: 20%;
-        height: 30%;
-        border-bottom-left-radius: var(--rounded-box); /* Daisy Ui variable */
+  &::after {
+    content: "";
+    width: 20%;
+    height: 30%;
+    border-bottom-left-radius: var(--rounded-box); /* Daisy Ui variable */
 
-        @apply absolute top-0 right-0 shadow-xl bg-info contrast-150;
+    @apply absolute top-0 right-0 shadow-xl bg-info contrast-150;
+  }
+
+  & .card-icon {
+    height: 100%;
+    right: -10%;
+    width: 45%;
+    @apply absolute contrast-150 fill-black/35;
+  }
+
+  & .card-badge {
+    @apply absolute bottom-0 right-0 w-1/6 fill-white;
+  }
+
+  & .card-body {
+    max-width: 80%;
+    @apply p-5 lg:p-7 contrast-100 text-white;
+
+    & .card-title {
+      @apply font-extrabold text-2xl lg:text-3xl text-ellipsis;
     }
 
-    & .card-icon {
-        height: 100%;
-        right: -10%;
-        width: 45%;
-        @apply absolute contrast-150 fill-black/35;
+    & .card-from {
+      @apply text-xs lg:text-base;
     }
 
-    & .card-badge {
-        @apply absolute bottom-0 right-0 w-1/6 fill-white;
+    & .card-date {
+      @apply text-xs lg:text-base font-light inline-flex items-center text-black/50;
     }
-
-    & .card-body {
-        max-width: 80%;
-        @apply p-5 lg:p-7 contrast-100 text-white;
-
-        & .card-title {            
-            @apply font-extrabold text-2xl lg:text-3xl text-ellipsis;
-        }
-
-        & .card-from {
-            @apply text-xs lg:text-base;
-        }
-
-        & .card-date {
-            @apply text-xs lg:text-base font-light inline-flex items-center text-black/50;
-        }
-    }
+  }
 }
