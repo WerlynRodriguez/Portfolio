@@ -11,7 +11,7 @@ export default function() {
     const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
     const themeOptions = (Object.keys(Themes) as Array<keyof typeof Themes>).map(theme => ({
-        label: capitalize(Themes[theme]),
+        label: capitalize(theme),
         onClick: () => setTheme(theme)
     }));
 

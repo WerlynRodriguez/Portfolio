@@ -1,6 +1,7 @@
 export enum Themes {
     light = 'light',
-    dark = 'dark'
+    dark = 'dark',
+    obsidian = 'obsidian'
 }
 
 export enum Colors {

@@ -25,6 +25,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <ThemeProvider>
-    <RouterProvider router={router} fallbackElement={<Loader />} />
+    <RouterProvider
+      router={router}
+      fallbackElement={
+        <Loader className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+      }
+    />
   </ThemeProvider>
 );

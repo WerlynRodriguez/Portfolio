@@ -25,12 +25,6 @@ import type { TAppDataLoader, TSections } from "../../types";
 import "./styles.css";
 import BannerSquare from "../../components/BannerSquare";
 
-/**
- * @todo Add animations between url changes.
- * @todo Add 2 more themes (twilight, obsidian)
- * @todo Add Search bar to filter projects by name.
- */
-
 const myGmail = "rdwerlynjose.16@gmail.com";
 
 export function Component() {
