@@ -23,10 +23,9 @@ import Footer from "../../components/Footer";
 
 import type { TAppDataLoader, TSections } from "../../types";
 import "./styles.css";
+import BannerSquare from "../../components/BannerSquare";
 
 /**
- * @todo Add Animated squares to the background of the hero section.
- * @todo Add animation to section when scrolling.
  * @todo Add animations between url changes.
  * @todo Add 2 more themes (twilight, obsidian)
  * @todo Add Search bar to filter projects by name.
@@ -79,9 +78,10 @@ export function Component() {
       <Header />
 
       <main>
-        <section id="banner" className="hero min-h-96">
+        <section id="banner" className="hero relative min-h-96">
+          <BannerSquare />
           <div className="hero-content flex-col gap-2 lg:flex-row lg:gap-16">
-            <div className="max-w-md text-center bg-transparent backdrop-blur-sm rounded-lg">
+            <div className="max-w-md text-center bg-transparent rounded-lg">
               <h1 className="text-5xl lg:text-6xl font-bold text-pretty [&::selection]:text-base-content brightness-150 contrast-150 [&::selection]:bg-purple-700/20">
                 {t("salute")}
               </h1>
@@ -152,10 +152,7 @@ export function Component() {
 
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
               {projects.map((project, i) => (
-                <ProjectCard
-                  key={i}
-                  project={project}
-                />
+                <ProjectCard key={i} project={project} />
               ))}
               <div className="card bg-base-100">
                 <div className="card-body">
@@ -179,7 +176,7 @@ export function Component() {
               {landSections.certifications.label}
             </h1>
 
-            <div className="grid place-items-center w-full py-4">
+            <div className="relative grid place-items-center w-full py-4">
               <Certification {...certificates[selectedCert]} />
             </div>
 

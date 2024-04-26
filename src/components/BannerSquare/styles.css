@@ -1,0 +1,19 @@
+.BannerSquare {
+  @apply absolute w-full h-full;
+  --container-bg: theme("colors.base-200");
+  --line-c: theme("colors.base-100");
+
+  background-color: var(--container-bg);
+  opacity: 0.6;
+  background-image: linear-gradient(var(--line-c) 3px, transparent 3px),
+    linear-gradient(to right, var(--line-c) 3px, var(--container-bg) 3px);
+  background-size: 8rem 8rem;
+  
+  transition: background-position 6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 1024px) {
+  .BannerSquare {
+    background-size: 12rem 12rem;
+  }
+}
