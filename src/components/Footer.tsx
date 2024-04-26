@@ -44,7 +44,12 @@ export default function (props: IFooterProps) {
       <nav>
         <div className="grid grid-flow-col gap-4">
           {socials.map((social, i) => (
-            <a className="btn btn-neutral" href={social.link} target="_blank">
+            <a
+              key={`social-${i}`}
+              className="btn btn-neutral"
+              href={social.link}
+              target="_blank"
+            >
               <SimpleIcon className="w-6 h-6" name={social.icon} showTitle />
             </a>
           ))}
