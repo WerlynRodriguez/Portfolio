@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import ProjectCard from "../../components/ProjectCard";
 import { TProject } from "../../types";
 import { GetProjects, ProjectPrefix } from "../../utils/data.util";
 import { useTranslation } from "react-i18next";
+import loadable from "@loadable/component";
+
+const ProjectCard = loadable(() => import("../../components/ProjectCard"), {
+  fallback: <div className="skeleton w-32 h-32"></div>,
+});
 
 export function Component() {
   const { t } = useTranslation("projects");

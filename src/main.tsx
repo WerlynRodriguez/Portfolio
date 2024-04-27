@@ -1,8 +1,9 @@
 import ReactDOM from "react-dom/client";
+import loadable from "@loadable/component";
 import ThemeProvider from "./context/ThemeProvider";
 import Loader from "./components/Loader";
-import Error from "./pages/Error";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+const Error = loadable(() => import("./pages/Error"));
 
 import "./index.css";
 import "./i18n";

@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import loadable from "@loadable/component";
 import Header from "../../components/Header";
 import InputCopy from "../../components/InputCopy";
 import {
@@ -15,15 +16,19 @@ import {
 import Dialog from "../../components/Dialog";
 import SectionList from "../../components/SectionList";
 import BtnSkill from "../../components/BtnSkill";
-import ProjectCard from "../../components/ProjectCard";
-import Certification from "../../components/Certification";
-
 import { useLoaderData } from "react-router-dom";
 import Footer from "../../components/Footer";
-
 import type { TAppDataLoader, TSections } from "../../types";
-import "./styles.css";
 import BannerSquare from "../../components/BannerSquare";
+
+const ProjectCard = loadable(() => import("../../components/ProjectCard"), {
+  fallback: <div className="skeleton w-32 h-32"></div>,
+});
+const Certification = loadable(() => import("../../components/Certification"), {
+  fallback: <div className="skeleton w-32 h-32"></div>,
+});
+
+import "./styles.css";
 
 const myGmail = "rdwerlynjose.16@gmail.com";
 
