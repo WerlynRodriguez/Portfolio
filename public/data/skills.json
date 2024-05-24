@@ -1,23 +1,20 @@
 {
     "all": {
-        "Javascript": ["Typescript", "Jquery"],
-        "React": ["Antdesign", "Graphql", "I18next", "Reactrouter", "Redux", "Semanticuireact", "Socketdotio", "Vite", "Zustand", "Axios"],
+        "Javascript": ["Typescript"],
+        "React": ["Antdesign", "I18next", "Reactrouter", "Redux", "Vite", "Zustand"],
         "Tailwindcss": ["Daisyui"],
-        "nodedotjs": ["Express", "JSONWebTokens", "Mongoose", "Nodemon", "Npm", "Yarn", "Socketdotio", "Webpack", "Cron", "Dotenv", "Nestjs"],
-        "Dotnet": ["Csharp", "C", "Cplusplus", "Graphql", "JSONWebTokens"],
+        "nodedotjs": ["Express", "JSONWebTokens", "Mongoose", "Socketdotio", "Webpack", "Cron", "Dotenv", "Nestjs", "Axios", "Graphql"],
+        "Dotnet": ["Csharp", "C", "Cplusplus", "ASPNET"],
         "ReactNative": ["Expo", "ReactNativePaper"],
-        "Git": ["Github", "Githubactions", "Githubpages", "Githubcopilot"],
+        "Git": ["Github", "Githubpages", "Githubcopilot"],
         "Python": ["Django", "Flask"],
         "Kotlin": [],
         "Mongodb": ["Mongoose"],
-        "Sql": ["Mysql", "Sqlite", "SqlServer"]
+        "Sql": ["Mysql", "Sqlite", "SqlServer", "Postgresql"]
     },
     "learning": {
         "Nextdotjs": [],
-        "Svelte": [],
-        "Vuedotjs": [],
         "Astro": [],
-        "Htmx": []
-
+        "Rubyonrails"
     }
 }
