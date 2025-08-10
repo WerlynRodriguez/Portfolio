@@ -1,12 +1,12 @@
 [
     {
+        "title": "Android developer",
+        "desc": "Native Android app for managing security rounds in corporate environments, for a security company"
+    }, {
         "title": "Nancurunaisa web system",
         "desc": "Therapeutic services management web system for oriental clinic Nancurunaisa"
     }, {
         "title": "Rimember",
         "desc": "Android app that allows you to randomly view videos and photos from your gallery"
-    }, {
-        "title": "ActiviTracker",
-        "desc": "Web application for tracking user activity. Recording the history of active timelines in the app."
     }
 ]
