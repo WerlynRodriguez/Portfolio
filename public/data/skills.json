@@ -1,20 +1,15 @@
 {
     "all": {
-        "Javascript": ["Typescript"],
-        "React": ["Antdesign", "I18next", "Reactrouter", "Redux", "Vite", "Zustand"],
-        "Tailwindcss": ["Daisyui"],
-        "nodedotjs": ["Express", "JSONWebTokens", "Mongoose", "Socketdotio", "Webpack", "Cron", "Dotenv", "Nestjs", "Axios", "Graphql"],
+        "React": ["Antdesign", "Expo", "I18next", "Reactrouter", "ReactNative", "Redux", "Vite", "Zustand"],
+        "nodedotjs": ["Express", "Daisyui", "Tailwindcss", "JSONWebTokens", "Javascript", "Mongoose", "Socketdotio", "Typescript", "Webpack", "Cron", "Dotenv", "Nestjs", "Axios", "Graphql"],
         "Dotnet": ["Csharp", "C", "Cplusplus", "ASPNET"],
-        "ReactNative": ["Expo", "ReactNativePaper"],
-        "Git": ["Github", "Githubpages", "Githubcopilot"],
+        "Git": ["Github", "Githubcopilot"],
         "Python": ["Django", "Flask"],
-        "Kotlin": [],
+        "Android": ["Kotlin", "JetpackCompose"],
         "Mongodb": ["Mongoose"],
         "Sql": ["Mysql", "Sqlite", "SqlServer", "Postgresql"]
     },
     "learning": {
-        "Nextdotjs": [],
-        "Astro": [],
-        "Rubyonrails": []
+        "Astro": []
     }
 }
