@@ -1,13 +1,14 @@
 [
     {
+        "title": "ActiviTracker",
+        "desc": "Web application for tracking user activity. Recording the history of active timelines in the app."
+    }, {
         "title": "Handicraft management application",
         "desc": "Application developed in 1 day, 2nd place winner, for a frontend competition, organized by RedSofa."
-    },
-    {
+    }, {
         "title": "Company Maker",
         "desc": "A backend template, with a basic CRUD, that registers companies and a list of their employees through Graphql queries."
-    },
-    {
+    }, {
         "title": "Bancopoly",
         "desc": "Financial and property management and exchange game between users, with a notification system."
     }
