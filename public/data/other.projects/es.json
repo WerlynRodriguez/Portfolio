@@ -1,5 +1,8 @@
 [
     {
+        "title": "ActiviTracker",
+        "desc": "Aplicación web para el seguimiento de actividad de usuarios. Registrando el historial de los plazos activos en la app."
+    }, {
         "title": "Aplicación de gestión de artesanías",
         "desc": "Aplicación desarrollada en 1 día, ganadora del 2do lugar, para una competencia frontend, organizada por RedSofa."
     },
