@@ -1,5 +1,12 @@
 [
   {
+    "title": "Inmersion IA + Google Gemini",
+    "icon": "GoogleGemini",
+    "from": "Alura",
+    "date": "04/09/2025",
+    "link": "https://credsverse.com/credentials/15c1e0d2-a762-43d4-a825-c4e39888439d"
+  },
+  {
     "title": "React (Basic)",
     "icon": "React",
     "from": "HackerRank",
