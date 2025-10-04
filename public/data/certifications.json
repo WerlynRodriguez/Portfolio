@@ -1,5 +1,12 @@
 [
   {
+    "title": "Development with AI",
+    "icon": "Firebase",
+    "from": "Big School",
+    "date": "04/10/2025",
+    "link": "https://drive.google.com/file/d/1YPweEYS6eJ94Ct69XotRcdOyOo8alYy9/view"
+  },
+  {
     "title": "Inmersion IA + Google Gemini",
     "icon": "GoogleGemini",
     "from": "Alura",
