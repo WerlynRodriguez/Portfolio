@@ -1,6 +1,6 @@
 import { TSimpleIcon } from "./types";
 
-const getUrl = (iconName: string) => `https://unpkg.com/simple-icons@v11/icons/${iconName}.svg`;
+const getUrl = (iconName: string) => `https://unpkg.com/simple-icons/icons/${iconName}.svg`;
 
 /**
  * iconCache is a simple cache to store icons, so we don't have to load them every time
